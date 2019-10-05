@@ -1,0 +1,11 @@
+sudo: required
+
+services: 
+  - docker
+  - node
+
+before_install:
+  - docker build -t mjain/client -f Dockerfile.dev .
+
+script:
+  - docker run mjain/client npm run test -- --coverage
