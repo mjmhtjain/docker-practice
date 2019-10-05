@@ -8,4 +8,4 @@ before_install:
   - docker build -t mjain/client -f Dockerfile.dev .
 
 script:
-  - docker run mjain/client npm run test -- --coverage
+  - docker run -e CI=true mjain/client npm run test -- --coverage
